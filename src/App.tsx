@@ -484,7 +484,7 @@ const App: React.FC = () => {
         id="btnAutoplay"
         onClick={toggleMusic}
         style={{ color: 'rgb(108, 82, 161)' }}
-        className="fixed right-6 bottom-24 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+        className="fixed left-1/2 translate-x-[130px] bottom-20 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
       >
         {isPlaying ? (
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="pause animate-pulse-gentle">
