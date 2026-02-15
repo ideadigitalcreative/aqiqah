@@ -253,12 +253,8 @@ const App: React.FC = () => {
               <h2 className="font-display text-2xl font-bold text-center mb-6" style={{ color: 'rgb(108, 82, 161)' }}>
                 Doa untuk Putra Kami
               </h2>
-              <p className="text-xl font-body mb-4 leading-loose text-brown" dir="rtl">
-                أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ
-              </p>
-              <div className="w-12 h-0.5 bg-accent mx-auto mb-4" />
-              <p className="text-sm text-muted-foreground italic">
-                "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari setiap setan dan binatang berbisa serta dari setiap mata yang dengki."
+              <p className="text-sm leading-relaxed text-brown font-medium italic">
+                "Ya Allah, jadikanlah anak-anak kami anak yang sholih sholihah, orang-orang yang hafal Al-Qur'an dan sunnah, orang-orang yang faham dalam agama dibarokahi kehidupan mereka di dunia dan di akhirat.”
               </p>
             </div>
           </div>
