@@ -273,7 +273,7 @@ const App: React.FC = () => {
           <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-large text-center reveal w-full">
             <div className="w-40 h-40 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center overflow-hidden shadow-inner border-4 border-white/50 relative">
               <img
-                src="/baby.png"
+                src="/baby1.png"
                 alt="Muhammad Hanan Al Fitrah"
                 className="w-full h-full object-cover scale-150 origin-center"
               />
@@ -369,7 +369,7 @@ const App: React.FC = () => {
                 Kec. Somba Opu, Kab. Gowa
               </p>
               <a
-                href="https://www.google.com/maps/place/5%C2%B014'01.2%22S+119%C2%B027'51.4%22E/@-5.23366,119.4616941,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-5.23366!4d119.464269"
+                href="https://www.google.com/maps?q=-5.23366,119.464269"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95"
