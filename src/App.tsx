@@ -135,6 +135,20 @@ const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const attemptAutoplay = () => {
+      audioRef.current?.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => console.log("Autoplay waiting for user interaction:", err));
+    };
+
+    attemptAutoplay();
+
+    // Also try on first click to increase success rate
+    window.addEventListener('click', attemptAutoplay, { once: true });
+    return () => window.removeEventListener('click', attemptAutoplay);
+  }, []);
+
   const handleRSVP = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.wish) {
