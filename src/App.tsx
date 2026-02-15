@@ -365,7 +365,7 @@ const App: React.FC = () => {
                 Kec. Somba Opu, Kab. Gowa
               </p>
               <a
-                href="https://www.google.com/maps?q=-5.23366,119.464269"
+                href="https://maps.google.com/maps?daddr=-5.23366,119.464269"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95"
