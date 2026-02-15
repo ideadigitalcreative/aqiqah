@@ -313,9 +313,20 @@ const App: React.FC = () => {
               Lokasi Acara
             </h2>
 
-            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft text-center">
-              <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Navigation className="text-primary" size={28} strokeWidth={1.5} />
+            <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-soft text-center">
+              <div className="w-full h-40 rounded-lg overflow-hidden mb-6 border border-primary/10 shadow-inner">
+                <iframe
+                  title="Lokasi Acara"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  style={{ border: 0 }}
+                  src="https://maps.google.com/maps?q=-5.23366,119.464269&z=17&output=embed"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Navigation className="text-primary" size={24} strokeWidth={1.5} />
               </div>
               <p className="font-semibold text-brown mb-1">
                 Jl. Nurul Jihad, Biring Kaloro
@@ -324,7 +335,7 @@ const App: React.FC = () => {
                 Kec. Somba Opu, Kab. Gowa
               </p>
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/place/5%C2%B014'01.2%22S+119%C2%B027'51.4%22E/@-5.23366,119.4616941,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-5.23366!4d119.464269"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95"
