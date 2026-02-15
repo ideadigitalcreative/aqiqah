@@ -207,7 +207,7 @@ const App: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-10 px-6 animate-slide-up">
-            <p className="text-sm uppercase tracking-[0.25em] mb-6 font-semibold -mt-8" style={{ color: '#6c52a1' }}>
+            <p className="text-sm uppercase tracking-[0.25em] mb-12 font-semibold -mt-24" style={{ color: '#6c52a1' }}>
               UNDANGAN TASYAKURAN AQIQAH
             </p>
             <div
@@ -218,7 +218,7 @@ const App: React.FC = () => {
                 Muhammad Hanan Al Fitrah
               </h1>
             </div>
-            <p className="mb-8 font-medium" style={{ color: '#6c52a1' }}>
+            <p className="mb-4 font-bold mt-12" style={{ color: '#6c52a1' }}>
               Putra dari Idul Fitrah & Eka Yuliana
             </p>
             <div className="inline-block px-8 py-2 bg-white/40 backdrop-blur-md rounded-full border border-white/30 mb-12 font-bold" style={{ color: '#6c52a1' }}>
@@ -365,8 +365,7 @@ const App: React.FC = () => {
                 Kec. Somba Opu, Kab. Gowa
               </p>
               <a
-                href="https://maps.google.com/maps?daddr=-5.23366,119.464269"
-                target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&destination=-5.23366,119.464269"
                 rel="noopener noreferrer"
                 className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95"
               >
