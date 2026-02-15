@@ -364,12 +364,15 @@ const App: React.FC = () => {
               <p className="text-sm text-muted-foreground mb-6">
                 Kec. Somba Opu, Kab. Gowa
               </p>
-              <button
-                onClick={() => window.open("https://www.google.com/maps?q=-5.23366,119.464269", "_blank")}
-                className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer"
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=-5.23366,119.464269"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer text-center"
               >
                 Buka Google Maps
-              </button>
+              </a>
             </div>
           </div>
         </section>
