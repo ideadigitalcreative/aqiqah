@@ -266,7 +266,7 @@ const App: React.FC = () => {
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
           style={{ backgroundImage: 'url("/bg.webp")' }}
         >
-          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-large text-center reveal w-full">
+          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-large text-center reveal w-full -mt-12">
             <div className="w-40 h-40 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center overflow-hidden shadow-inner border-4 border-white/50 relative">
               <img
                 src="/baby1.png"
@@ -296,7 +296,7 @@ const App: React.FC = () => {
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
           style={{ backgroundImage: 'url("/bg.webp")' }}
         >
-          <div className="w-full reveal">
+          <div className="w-full reveal -mt-12">
             <h2 className="font-display text-2xl font-bold text-center mb-8 drop-shadow-md" style={{ color: 'rgb(108, 82, 161)' }}>
               Detail Acara
             </h2>
