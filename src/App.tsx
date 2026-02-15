@@ -366,6 +366,7 @@ const App: React.FC = () => {
               </p>
               <a
                 href="https://www.google.com/maps/dir/?api=1&destination=-5.23366,119.464269"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95"
               >
