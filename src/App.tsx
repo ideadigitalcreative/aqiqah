@@ -498,7 +498,7 @@ const App: React.FC = () => {
 
         {/* Audio Element */}
         <audio ref={audioRef} loop>
-          <source src="/music.mp3" type="audio/mpeg" />
+          <source src="/music-new.mp3" type="audio/mpeg" />
           <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
         </audio>
       </button>
