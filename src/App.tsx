@@ -486,8 +486,8 @@ const App: React.FC = () => {
           const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Muhammad Hanan Al Fitrah. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
           window.open(`https://wa.me/?text=${text}`, '_blank');
         }}
-        style={{ backgroundColor: '#25D366' }}
-        className="fixed left-1/2 translate-x-[130px] bottom-36 z-50 w-12 h-12 rounded-full shadow-large flex items-center justify-center transition-all duration-300 active:scale-95 text-white"
+        style={{ color: 'rgb(108, 82, 161)' }}
+        className="fixed left-1/2 translate-x-[130px] bottom-34 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
       >
         <Share2 size={24} strokeWidth={2.5} />
       </button>
