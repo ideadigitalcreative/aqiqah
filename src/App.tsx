@@ -25,6 +25,20 @@ const App: React.FC = () => {
     wish: ''
   });
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(e => console.error("Playback failed:", e));
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   // Fetch wishes from Supabase
   useEffect(() => {
     const fetchWishes = async () => {
@@ -82,6 +96,11 @@ const App: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Start music when opening invitation
+      if (id === 'doa' && !isPlaying) {
+        audioRef.current?.play().catch(e => console.error("Autoplay blocked:", e));
+        setIsPlaying(true);
+      }
     }
   };
 
@@ -309,12 +328,12 @@ const App: React.FC = () => {
           style={{ backgroundImage: 'url("/bg.webp")' }}
         >
           <div className="w-full reveal z-10">
-            <h2 className="font-display text-2xl font-bold text-center mb-8 drop-shadow-md" style={{ color: 'rgb(108, 82, 161)' }}>
+            <h2 className="font-display text-2xl font-bold text-center mb-6 drop-shadow-md -mt-12" style={{ color: 'rgb(108, 82, 161)' }}>
               Lokasi Acara
             </h2>
 
             <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-soft text-center">
-              <div className="w-full h-40 rounded-lg overflow-hidden mb-6 border border-primary/10 shadow-inner">
+              <div className="w-full h-64 rounded-lg overflow-hidden mb-6 border border-primary/10 shadow-inner">
                 <iframe
                   title="Lokasi Acara"
                   width="100%"
@@ -459,6 +478,30 @@ const App: React.FC = () => {
           </div>
         </section>
       </div>
+
+      {/* MUSIC CONTROL */}
+      <button
+        id="btnAutoplay"
+        onClick={toggleMusic}
+        style={{ color: 'rgb(108, 82, 161)' }}
+        className="fixed right-6 bottom-24 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+      >
+        {isPlaying ? (
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="pause animate-pulse-gentle">
+            <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24ZM112,160a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path>
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="play">
+            <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm36.44,110.66-48,32A8.05,8.05,0,0,1,112,168a8,8,0,0,1-8-8V96a8,8,0,0,1,12.44-6.66l48,32a8,8,0,0,1,0,13.32Z"></path>
+          </svg>
+        )}
+
+        {/* Audio Element */}
+        <audio ref={audioRef} loop>
+          <source src="/music.mp3" type="audio/mpeg" />
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        </audio>
+      </button>
 
       {/* MOBILE FOOTER */}
       <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] h-[65px] glass-nav border-t border-white/20 rounded-t-nav z-50 flex items-center justify-around px-4 shadow-footer">
