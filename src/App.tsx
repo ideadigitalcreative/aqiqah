@@ -113,7 +113,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-03-11T10:00:00+08:00').getTime();
+    const targetDate = new Date('2026-03-11T18:22:00+08:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -325,7 +325,8 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Waktu</p>
-                  <p className="font-semibold text-brown">Pukul 10.00 WITA – Selesai</p>
+                  <p className="font-semibold text-brown">Pukul 18.22 WITA – Selesai</p>
+                  <p className="text-xs text-primary font-bold">(Buka Puasa Bersama)</p>
                 </div>
               </div>
             </div>
