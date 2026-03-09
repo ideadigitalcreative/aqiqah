@@ -113,7 +113,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-02-17T10:00:00+07:00').getTime();
+    const targetDate = new Date('2026-03-11T10:00:00+08:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -215,14 +215,14 @@ const App: React.FC = () => {
               style={{ backgroundImage: 'url("/shape.webp")' }}
             >
               <h1 className="font-display text-[24px] font-bold text-glow text-white leading-tight px-4 text-center">
-                Muhammad Hanan Al Fitrah
+                Kareem Sehzade Muzakkir
               </h1>
             </div>
             <p className="mb-4 font-bold mt-12" style={{ color: '#6c52a1' }}>
-              Putra dari Idul Fitrah & Eka Yuliana
+              Putra dari Ahmad Muzakkir & Ishmah Rabbaniyyah
             </p>
             <div className="inline-block px-8 py-2 bg-white/40 backdrop-blur-md rounded-full border border-white/30 mb-12 font-bold" style={{ color: '#6c52a1' }}>
-              17 Februari 2026
+              Rabu, 11 Maret 2026
             </div>
             <button
               onClick={() => scrollTo('doa')}
@@ -270,7 +270,7 @@ const App: React.FC = () => {
             <div className="w-40 h-40 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center overflow-hidden shadow-inner border-4 border-white/50 relative">
               <img
                 src="/baby1.png"
-                alt="Muhammad Hanan Al Fitrah"
+                alt="Kareem Sehzade Muzakkir"
                 className="w-full h-full object-cover scale-150 origin-center"
               />
             </div>
@@ -278,14 +278,14 @@ const App: React.FC = () => {
               Dengan penuh rasa syukur kepada Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara Tasyakuran Aqiqah putra kami tercinta:
             </p>
             <h3 className="font-display text-2xl font-bold mb-2" style={{ color: 'rgb(108, 82, 161)' }}>
-              Muhammad Hanan Al Fitrah
+              Kareem Sehzade Muzakkir
             </h3>
             <div className="w-12 h-0.5 bg-accent mx-auto mb-4" />
             <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">
               Putra dari
             </p>
             <p className="font-semibold text-brown">
-              Idul Fitrah & Eka Yuliana
+              Ahmad Muzakkir & Ishmah Rabbaniyyah
             </p>
           </div>
         </section>
@@ -316,7 +316,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Tanggal</p>
-                  <p className="font-semibold text-brown">17 Februari 2026</p>
+                  <p className="font-semibold text-brown">Rabu, 11 Maret 2026</p>
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-5 rounded-lg shadow-soft flex items-center gap-4">
@@ -325,7 +325,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Waktu</p>
-                  <p className="font-semibold text-brown">Pukul 10.00 WIB – Selesai</p>
+                  <p className="font-semibold text-brown">Pukul 10.00 WITA – Selesai</p>
                 </div>
               </div>
             </div>
@@ -351,7 +351,7 @@ const App: React.FC = () => {
                   height="100%"
                   frameBorder="0"
                   style={{ border: 0 }}
-                  src="https://maps.google.com/maps?q=-5.23366,119.464269&z=17&output=embed"
+                  src="https://maps.google.com/maps?q=-5.095288,119.52568&z=17&output=embed"
                   allowFullScreen
                 ></iframe>
               </div>
@@ -359,13 +359,13 @@ const App: React.FC = () => {
                 <Navigation className="text-primary" size={24} strokeWidth={1.5} />
               </div>
               <p className="font-semibold text-brown mb-1">
-                Jl. Nurul Jihad, Biring Kaloro
+                Perumahan Sudiang Raya ( PSR ) K 4 No. 14
               </p>
               <p className="text-sm text-muted-foreground mb-6">
-                Kec. Somba Opu, Kab. Gowa
+                Kec. Biringkanaya, Kota Makassar
               </p>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=-5.23366,119.464269"
+                href="https://maps.app.goo.gl/u3P5WyybdD8z5Jzs9"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -471,7 +471,7 @@ const App: React.FC = () => {
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Keluarga Besar</p>
                 <p className="font-display text-xl font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
-                  Idul Fitrah & Eka Yuliana
+                  Ahmad Muzakkir & Ishmah Rabbaniyyah
                 </p>
               </div>
             </div>
@@ -485,7 +485,7 @@ const App: React.FC = () => {
             </button>
 
             <p className="text-[10px] pt-4 font-medium" style={{ color: 'rgb(108, 82, 161)' }}>
-              © 2026 Muhammad Hanan Al Fitrah
+              © 2026 Kareem Sehzade Muzakkir
             </p>
           </div>
         </section>
@@ -494,7 +494,7 @@ const App: React.FC = () => {
       {/* SHARE BUTTON */}
       <button
         onClick={() => {
-          const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Muhammad Hanan Al Fitrah. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
+          const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Kareem Sehzade Muzakkir. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
           window.open(`https://wa.me/?text=${text}`, '_blank');
         }}
         style={{ color: 'rgb(108, 82, 161)' }}
