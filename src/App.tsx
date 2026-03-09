@@ -113,7 +113,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-03-11T18:22:00+08:00').getTime();
+    const targetDate = new Date('2026-03-11T17:00:00+08:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -219,7 +219,7 @@ const App: React.FC = () => {
               </h1>
             </div>
             <p className="mb-4 font-bold mt-12" style={{ color: '#6c52a1' }}>
-              Putra dari Ahmad Muzakkir & Ishmah Rabbaniyyah
+              Putra dari Ahmad Muzakkir & Ishmah Robbaniyyah
             </p>
             <div className="inline-block px-8 py-2 bg-white/40 backdrop-blur-md rounded-full border border-white/30 mb-12 font-bold" style={{ color: '#6c52a1' }}>
               Rabu, 11 Maret 2026
@@ -285,7 +285,7 @@ const App: React.FC = () => {
               Putra dari
             </p>
             <p className="font-semibold text-brown">
-              Ahmad Muzakkir & Ishmah Rabbaniyyah
+              Ahmad Muzakkir & Ishmah Robbaniyyah
             </p>
           </div>
         </section>
@@ -325,7 +325,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Waktu</p>
-                  <p className="font-semibold text-brown">Pukul 18.22 WITA – Selesai</p>
+                  <p className="font-semibold text-brown">Pukul 17.00 WITA – Selesai</p>
                   <p className="text-xs text-primary font-bold">(Buka Puasa Bersama)</p>
                 </div>
               </div>
@@ -472,7 +472,7 @@ const App: React.FC = () => {
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Keluarga Besar</p>
                 <p className="font-display text-xl font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
-                  Ahmad Muzakkir & Ishmah Rabbaniyyah
+                  Ahmad Muzakkir & Ishmah Robbaniyyah
                 </p>
               </div>
             </div>
