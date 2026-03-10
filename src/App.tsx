@@ -364,16 +364,21 @@ const App: React.FC = () => {
             </h2>
 
             <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-soft text-center">
-              <div className="w-full h-64 rounded-lg overflow-hidden mb-6 border border-primary/10 shadow-inner">
-                <iframe
-                  title="Lokasi Acara"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  style={{ border: 0 }}
-                  src="https://maps.google.com/maps?q=-5.095288,119.52568&z=17&output=embed"
-                  allowFullScreen
-                ></iframe>
+              <div
+                className="flex flex-col items-center justify-center py-12 cursor-pointer group"
+                onClick={() => setShowGifts(true)}
+              >
+                <div className="relative animate-bounce-gentle mb-4">
+                  <div className="w-32 h-32 bg-button-gradient rounded-2xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
+                    <Gift size={64} className="text-white" strokeWidth={1.5} />
+                  </div>
+                  <div className="absolute -top-3 -right-3 bg-white p-2 rounded-full shadow-lg">
+                    <Heart size={20} className="text-primary fill-primary animate-pulse" />
+                  </div>
+                </div>
+                <p className="font-bold text-primary animate-pulse tracking-wide">
+                  Klik Untuk Kirim Kado
+                </p>
               </div>
               <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Navigation className="text-primary" size={24} strokeWidth={1.5} />
@@ -601,23 +606,40 @@ const App: React.FC = () => {
       {/* MODAL GIFTS */}
       {showGifts && (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 bg-black/60 backdrop-blur-sm animate-fade-in-up">
-          <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-sm relative">
+          <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-sm relative max-h-[90vh] overflow-y-auto custom-scrollbar">
             <button
               onClick={() => setShowGifts(false)}
-              className="absolute top-4 right-4 text-primary bg-white hover:bg-primary hover:text-white border border-primary/20 p-2 rounded-full transition-colors active:scale-95 shadow-sm"
+              className="absolute top-4 right-4 text-primary bg-white hover:bg-primary hover:text-white border border-primary/20 p-2 rounded-full transition-colors active:scale-95 shadow-sm z-10"
               title="Tutup"
             >
               <X size={20} />
             </button>
+
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center animate-bounce-gentle">
                 <Gift size={48} className="text-primary" strokeWidth={1.5} />
               </div>
             </div>
-            <h3 className="font-display text-2xl font-bold mb-4 text-center" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Kareem</h3>
+
+            <h3 className="font-display text-2xl font-bold mb-4 text-center" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Zade</h3>
+
+            {/* Map Section in Modal */}
+            <div className="w-full h-48 rounded-xl overflow-hidden mb-6 border border-primary/10 shadow-inner">
+              <iframe
+                title="Lokasi Acara"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 0 }}
+                src="https://maps.google.com/maps?q=-5.095288,119.52568&z=17&output=embed"
+                allowFullScreen
+              ></iframe>
+            </div>
+
             <p className="text-[13px] text-brown mb-6 text-center leading-relaxed">
               Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
             </p>
+
             <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group mb-4">
               <div className="flex justify-center mb-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
