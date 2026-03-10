@@ -12,7 +12,8 @@ import {
   User,
   Share2,
   Copy,
-  X
+  X,
+  Gift
 } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
@@ -608,6 +609,11 @@ const App: React.FC = () => {
             >
               <X size={20} />
             </button>
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center animate-bounce-gentle">
+                <Gift size={48} className="text-primary" strokeWidth={1.5} />
+              </div>
+            </div>
             <h3 className="font-display text-2xl font-bold mb-4 text-center" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Kareem</h3>
             <p className="text-[13px] text-brown mb-6 text-center leading-relaxed">
               Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
