@@ -10,13 +10,14 @@ import {
   Navigation,
   ArrowRight,
   User,
-  Share2
+  Share2,
+  Copy
 } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('cover');
-  const [showToast, setShowToast] = useState(false);
+  const [showToast, setShowToast] = useState({ show: false, message: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [wishes, setWishes] = useState<any[]>([]);
 
@@ -169,11 +170,17 @@ const App: React.FC = () => {
         alert('Gagal mengirim RSVP. Silakan coba lagi.');
         console.error('Error inserting RSVP:', error);
       } else {
-        setShowToast(true);
+        setShowToast({ show: true, message: 'Terima kasih atas doa dan kehadirannya 🤍' });
         setFormData({ name: '', guests: '1', wish: '' });
-        setTimeout(() => setShowToast(false), 3000);
+        setTimeout(() => setShowToast({ show: false, message: '' }), 3000);
       }
     }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setShowToast({ show: true, message: 'Nomor rekening berhasil disalin!' });
+    setTimeout(() => setShowToast({ show: false, message: '' }), 3000);
   };
 
   return (
@@ -250,12 +257,21 @@ const App: React.FC = () => {
 
           <div className="reveal relative z-10 w-full mt-12 px-2">
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft text-center">
-              <h2 className="font-display text-2xl font-bold text-center mb-6" style={{ color: 'rgb(108, 82, 161)' }}>
-                Doa untuk Putra Kami
-              </h2>
-              <p className="text-sm leading-relaxed text-brown font-medium italic">
-                "Ya Allah, jadikanlah anak-anak kami anak yang sholih sholihah, orang-orang yang hafal Al-Qur'an dan sunnah, orang-orang yang faham dalam agama dibarokahi kehidupan mereka di dunia dan di akhirat.”
-              </p>
+              <div className="space-y-4 text-[13px] leading-relaxed text-brown font-medium">
+                <p>
+                  Kurang lebih tujuh tahun kami menunggu dengan penuh kesabaran dan ketabahan. Setiap waktu kami belajar untuk terus berhusnuzan kepada Allah, percaya bahwa semua akan Allah berikan pada waktu yang paling tepat.
+                </p>
+                <p>
+                  Dalam setiap doa, terutama ketika berada di Tanah Haram, kami selalu memohon:
+                </p>
+                <p className="italic font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
+                  "Ya Allah, berikanlah pada waktu yang tepat dan dengan cara-Mu, ya Rabb. Jika Engkau ridha, maka mudahkanlah."
+                </p>
+                <p>
+                  Dan pada tahun ke-8 pernikahan kami, Allah menjawab doa-doa itu.
+                  Inilah jawaban dari penantian panjang yang kami jalani dengan sabar dan penuh harap. 🤍
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -378,7 +394,43 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECTION 6: RSVP */}
+        {/* SECTION 6: GIFTS */}
+        <section
+          id="hadiah"
+          className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
+          style={{ backgroundImage: 'url("/bg.webp")' }}
+        >
+          <div className="w-full reveal z-10 text-center">
+            <h2 className="font-display text-2xl font-bold mb-6 drop-shadow-md -mt-12" style={{ color: 'rgb(108, 82, 161)' }}>
+              Kado untuk Kareem
+            </h2>
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft">
+              <p className="text-sm text-brown mb-6">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
+              </p>
+
+              <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-2">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Bank_Syariah_Indonesia_2021.svg" alt="BSI" className="h-6" />
+                </div>
+                <p className="text-xs font-bold text-primary mb-1 text-left uppercase tracking-widest">Bank Syariah Indonesia (BSI)</p>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
+                  <button
+                    onClick={() => copyToClipboard('1993120991')}
+                    className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
+                    title="Salin Rekening"
+                  >
+                    <Copy size={18} />
+                  </button>
+                </div>
+                <p className="text-sm font-semibold text-brown text-left">a.n Ahmad Muzakkir</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 7: RSVP */}
         <section
           id="rsvp"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start pt-12 p-6"
@@ -455,124 +507,134 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* SECTION 7: THANKS */}
-        <section
-          id="thanks"
-          className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-8 text-center"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
-        >
-          <div className="reveal space-y-8 max-w-xs mx-auto">
-            <div className="bg-white/90 backdrop-blur-sm p-10 rounded-lg shadow-large">
-              <h2 className="font-display text-3xl font-bold mb-6" style={{ color: 'rgb(108, 82, 161)' }}>
-                Terima Kasih
-              </h2>
-              <p className="text-sm leading-relaxed text-brown mb-8">
-                Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada putra kami.
+      </section>
+
+      {/* SECTION 8: THANKS */}
+      <section
+        id="thanks"
+        className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-8 text-center"
+        style={{ backgroundImage: 'url("/bg.webp")' }}
+      >
+        <div className="reveal space-y-8 max-w-xs mx-auto">
+          <div className="bg-white/90 backdrop-blur-sm p-10 rounded-lg shadow-large">
+            <h2 className="font-display text-3xl font-bold mb-6" style={{ color: 'rgb(108, 82, 161)' }}>
+              Terima Kasih
+            </h2>
+            <p className="text-sm leading-relaxed text-brown mb-8">
+              Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada putra kami.
+            </p>
+            <div className="space-y-2">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">Keluarga Besar</p>
+              <p className="font-display text-xl font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
+                Ahmad Muzakkir & Ishmah Robbaniyyah
               </p>
-              <div className="space-y-2">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">Keluarga Besar</p>
-                <p className="font-display text-xl font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
-                  Ahmad Muzakkir & Ishmah Robbaniyyah
-                </p>
-              </div>
             </div>
-
-            <button
-              onClick={() => scrollTo('cover')}
-              className="inline-flex items-center gap-2 text-white font-semibold py-3 px-8 rounded-full shadow-large transition-transform active:scale-95"
-              style={{ backgroundColor: 'rgb(108, 82, 161)' }}
-            >
-              Kembali ke Atas
-            </button>
-
-            <p className="text-[10px] pt-4 font-medium" style={{ color: 'rgb(108, 82, 161)' }}>
-              © 2026 Kareem Sehzade Muzakkir
-            </p>
           </div>
-        </section>
-      </div>
 
-      {/* SHARE BUTTON */}
-      <button
-        onClick={() => {
-          const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Kareem Sehzade Muzakkir. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
-          window.open(`https://wa.me/?text=${text}`, '_blank');
-        }}
-        style={{ color: 'rgb(108, 82, 161)' }}
-        className="fixed left-1/2 translate-x-[130px] bottom-34 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
-      >
-        <Share2 size={24} strokeWidth={2.5} />
-      </button>
+          <button
+            onClick={() => scrollTo('cover')}
+            className="inline-flex items-center gap-2 text-white font-semibold py-3 px-8 rounded-full shadow-large transition-transform active:scale-95"
+            style={{ backgroundColor: 'rgb(108, 82, 161)' }}
+          >
+            Kembali ke Atas
+          </button>
 
-      {/* MUSIC CONTROL */}
-      <button
-        id="btnAutoplay"
-        onClick={toggleMusic}
-        style={{ color: 'rgb(108, 82, 161)' }}
-        className="fixed left-1/2 translate-x-[130px] bottom-20 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
-      >
-        {isPlaying ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="pause animate-pulse-gentle">
-            <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24ZM112,160a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path>
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="play">
-            <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm36.44,110.66-48,32A8.05,8.05,0,0,1,112,168a8,8,0,0,1-8-8V96a8,8,0,0,1,12.44-6.66l48,32a8,8,0,0,1,0,13.32Z"></path>
-          </svg>
-        )}
-
-        {/* Audio Element */}
-        <audio ref={audioRef} loop>
-          <source src="/music-new.mp3" type="audio/mpeg" />
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-        </audio>
-      </button>
-
-      {/* MOBILE FOOTER */}
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] h-[65px] glass-nav border-t border-white/20 rounded-t-nav z-50 flex items-center justify-around px-4 shadow-footer">
-        <NavItem
-          icon={<Circle size={20} />}
-          label="Opening"
-          active={activeSection === 'cover'}
-          onClick={() => scrollTo('cover')}
-        />
-        <NavItem
-          icon={<Heart size={20} />}
-          label="Doa"
-          active={activeSection === 'doa'}
-          onClick={() => scrollTo('doa')}
-        />
-        <NavItem
-          icon={<Smile size={20} />}
-          label="Profil"
-          active={activeSection === 'profil'}
-          onClick={() => scrollTo('profil')}
-        />
-        <NavItem
-          icon={<Star size={20} />}
-          label="Acara"
-          active={activeSection === 'acara'}
-          onClick={() => scrollTo('acara')}
-        />
-        <NavItem
-          icon={<MessageCircle size={20} />}
-          label="RSVP"
-          active={activeSection === 'rsvp'}
-          onClick={() => scrollTo('rsvp')}
-        />
-      </nav>
-
-      {/* SUCCESS TOAST */}
-      {showToast && (
-        <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[60] animate-fade-in-up">
-          <div className="bg-white px-6 py-3 rounded-full shadow-large border-l-4 border-primary">
-            <p className="text-sm font-semibold text-brown">
-              Terima kasih atas doa dan kehadirannya 🤍
-            </p>
-          </div>
+          <p className="text-[10px] pt-4 font-medium" style={{ color: 'rgb(108, 82, 161)' }}>
+            © 2026 Kareem Sehzade Muzakkir
+          </p>
         </div>
-      )}
+      </section>
     </div>
+
+      {/* SHARE BUTTON */ }
+  <button
+    onClick={() => {
+      const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Kareem Sehzade Muzakkir. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    }}
+    style={{ color: 'rgb(108, 82, 161)' }}
+    className="fixed left-1/2 translate-x-[130px] bottom-34 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+  >
+    <Share2 size={24} strokeWidth={2.5} />
+  </button>
+
+  {/* MUSIC CONTROL */ }
+  <button
+    id="btnAutoplay"
+    onClick={toggleMusic}
+    style={{ color: 'rgb(108, 82, 161)' }}
+    className="fixed left-1/2 translate-x-[130px] bottom-20 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+  >
+    {isPlaying ? (
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="pause animate-pulse-gentle">
+        <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24ZM112,160a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path>
+      </svg>
+    ) : (
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="play">
+        <path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm36.44,110.66-48,32A8.05,8.05,0,0,1,112,168a8,8,0,0,1-8-8V96a8,8,0,0,1,12.44-6.66l48,32a8,8,0,0,1,0,13.32Z"></path>
+      </svg>
+    )}
+
+    {/* Audio Element */}
+    <audio ref={audioRef} loop>
+      <source src="/music-new.mp3" type="audio/mpeg" />
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+  </button>
+
+  {/* MOBILE FOOTER */ }
+  <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] h-[65px] glass-nav border-t border-white/20 rounded-t-nav z-50 flex items-center justify-around px-4 shadow-footer">
+    <NavItem
+      icon={<Circle size={20} />}
+      label="Opening"
+      active={activeSection === 'cover'}
+      onClick={() => scrollTo('cover')}
+    />
+    <NavItem
+      icon={<Heart size={20} />}
+      label="Doa"
+      active={activeSection === 'doa'}
+      onClick={() => scrollTo('doa')}
+    />
+    <NavItem
+      icon={<Smile size={20} />}
+      label="Profil"
+      active={activeSection === 'profil'}
+      onClick={() => scrollTo('profil')}
+    />
+    <NavItem
+      icon={<Star size={20} />}
+      label="Acara"
+      active={activeSection === 'acara'}
+      onClick={() => scrollTo('acara')}
+    />
+    <NavItem
+      icon={<Heart size={20} />}
+      label="Hadiah"
+      active={activeSection === 'hadiah'}
+      onClick={() => scrollTo('hadiah')}
+    />
+    <NavItem
+      icon={<MessageCircle size={20} />}
+      label="RSVP"
+      active={activeSection === 'rsvp'}
+      onClick={() => scrollTo('rsvp')}
+    />
+  </nav>
+
+  {/* SUCCESS TOAST */ }
+  {
+    showToast.show && (
+      <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[60] animate-fade-in-up">
+        <div className="bg-white px-6 py-3 rounded-full shadow-large border-l-4 border-primary">
+          <p className="text-sm font-semibold text-brown">
+            {showToast.message}
+          </p>
+        </div>
+      </div>
+    )
+  }
+    </div >
   );
 };
 
