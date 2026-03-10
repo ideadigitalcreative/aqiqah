@@ -20,6 +20,7 @@ const App: React.FC = () => {
   const [showToast, setShowToast] = useState({ show: false, message: '' });
   const [isLoading, setIsLoading] = useState(false);
   const [wishes, setWishes] = useState<any[]>([]);
+  const [showGifts, setShowGifts] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -381,55 +382,55 @@ const App: React.FC = () => {
               <p className="text-sm text-muted-foreground mb-6">
                 Kec. Biringkanaya, Kota Makassar
               </p>
-              <a
-                href="https://maps.app.goo.gl/u3P5WyybdD8z5Jzs9"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-block w-full py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer text-center"
-              >
-                Buka Google Maps
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 6: GIFTS */}
-        <section
-          id="hadiah"
-          className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
-        >
-          <div className="w-full reveal z-10 text-center">
-            <h2 className="font-display text-2xl font-bold mb-6 drop-shadow-md -mt-12" style={{ color: 'rgb(108, 82, 161)' }}>
-              Kado untuk Kareem
-            </h2>
-            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft">
-              <p className="text-sm text-brown mb-6">
-                Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
-              </p>
-
-              <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group">
-                <div className="flex justify-center mb-4">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
-                </div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
-                  <button
-                    onClick={() => copyToClipboard('1993120991')}
-                    className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
-                    title="Salin Rekening"
-                  >
-                    <Copy size={18} />
-                  </button>
-                </div>
-                <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
+              <div className="grid grid-cols-2 gap-3 mb-4">
+                <a
+                  href="https://maps.app.goo.gl/u3P5WyybdD8z5Jzs9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="py-3 bg-white text-primary border border-primary/20 font-bold rounded-btn shadow-soft transition-transform active:scale-95 cursor-pointer text-center text-xs flex items-center justify-center gap-1"
+                >
+                  <Navigation size={14} /> Google Maps
+                </a>
+                <button
+                  onClick={() => setShowGifts(!showGifts)}
+                  className="py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer text-center text-xs flex items-center justify-center gap-1"
+                >
+                  <Heart size={14} /> Kirim Hadiah
+                </button>
               </div>
+
+              {/* REKENING REVEAL */}
+              {showGifts && (
+                <div className="mt-8 animate-fade-in-up">
+                  <div className="w-12 h-1 bg-primary/20 mx-auto mb-6 rounded-full" />
+                  <h3 className="font-display text-lg font-bold mb-4" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Kareem</h3>
+                  <p className="text-[11px] text-brown mb-6 px-2">
+                    Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
+                  </p>
+                  <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group">
+                    <div className="flex justify-center mb-4">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
+                    </div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
+                      <button
+                        onClick={() => copyToClipboard('1993120991')}
+                        className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
+                        title="Salin Rekening"
+                      >
+                        <Copy size={18} />
+                      </button>
+                    </div>
+                    <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
 
-        {/* SECTION 7: RSVP */}
+        {/* SECTION 6: RSVP */}
         <section
           id="rsvp"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start pt-12 p-6"
@@ -608,8 +609,11 @@ const App: React.FC = () => {
         <NavItem
           icon={<Heart size={20} />}
           label="Hadiah"
-          active={activeSection === 'hadiah'}
-          onClick={() => scrollTo('hadiah')}
+          active={activeSection === 'lokasi' && showGifts}
+          onClick={() => {
+            scrollTo('lokasi');
+            setShowGifts(true);
+          }}
         />
         <NavItem
           icon={<MessageCircle size={20} />}
