@@ -7,7 +7,6 @@ import {
   Circle,
   Sun,
   Clock3,
-  Navigation,
   ArrowRight,
   User,
   Share2,
@@ -379,32 +378,6 @@ const App: React.FC = () => {
                 <p className="font-bold text-primary animate-pulse tracking-wide">
                   Klik Untuk Kirim Kado
                 </p>
-              </div>
-              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Navigation className="text-primary" size={24} strokeWidth={1.5} />
-              </div>
-              <p className="font-semibold text-brown mb-1">
-                Perumahan Sudiang Raya ( PSR ) K 4 No. 14
-              </p>
-              <p className="text-sm text-muted-foreground mb-6">
-                Kec. Biringkanaya, Kota Makassar
-              </p>
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <a
-                  href="https://maps.app.goo.gl/u3P5WyybdD8z5Jzs9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="py-3 bg-white text-primary border border-primary/20 font-bold rounded-btn shadow-soft transition-transform active:scale-95 cursor-pointer text-center text-xs flex items-center justify-center gap-1"
-                >
-                  <Navigation size={14} /> Google Maps
-                </a>
-                <button
-                  onClick={() => setShowGifts(true)}
-                  className="py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer text-center text-xs flex items-center justify-center gap-1"
-                >
-                  <Heart size={14} /> Kirim Hadiah
-                </button>
               </div>
             </div>
           </div>
