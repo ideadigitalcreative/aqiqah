@@ -410,10 +410,9 @@ const App: React.FC = () => {
               </p>
 
               <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Bank_Syariah_Indonesia_2021.svg" alt="BSI" className="h-6" />
+                <div className="flex justify-center mb-4">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
                 </div>
-                <p className="text-xs font-bold text-primary mb-1 text-left uppercase tracking-widest">Bank Syariah Indonesia (BSI)</p>
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
                   <button
@@ -424,7 +423,7 @@ const App: React.FC = () => {
                     <Copy size={18} />
                   </button>
                 </div>
-                <p className="text-sm font-semibold text-brown text-left">a.n Ahmad Muzakkir</p>
+                <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
               </div>
             </div>
           </div>
