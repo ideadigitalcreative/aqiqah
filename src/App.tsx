@@ -609,12 +609,9 @@ const App: React.FC = () => {
               ></iframe>
             </div>
 
-            <p className="text-[13px] text-brown mb-6 text-center leading-relaxed">
-              Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
-            </p>
 
             <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group mb-4">
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-start mb-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
               </div>
               <div className="flex items-center justify-between gap-2 mb-2">
@@ -627,7 +624,7 @@ const App: React.FC = () => {
                   <Copy size={18} />
                 </button>
               </div>
-              <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
+              <p className="text-sm font-semibold text-brown uppercase tracking-wider text-left">a.n Ahmad Muzakkir</p>
             </div>
           </div>
         </div>
