@@ -359,7 +359,7 @@ const App: React.FC = () => {
         >
           <div className="w-full reveal z-10">
             <h2 className="font-display text-2xl font-bold text-center mb-6 drop-shadow-md -mt-12" style={{ color: 'rgb(108, 82, 161)' }}>
-              Lokasi Acara
+              Kado untuk Zade
             </h2>
 
             <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-soft text-center">
