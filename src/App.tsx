@@ -11,7 +11,8 @@ import {
   ArrowRight,
   User,
   Share2,
-  Copy
+  Copy,
+  X
 } from 'lucide-react';
 import { supabase } from './lib/supabase';
 
@@ -393,39 +394,12 @@ const App: React.FC = () => {
                   <Navigation size={14} /> Google Maps
                 </a>
                 <button
-                  onClick={() => setShowGifts(!showGifts)}
+                  onClick={() => setShowGifts(true)}
                   className="py-3 bg-button-gradient text-white font-bold rounded-btn shadow-glow transition-transform active:scale-95 cursor-pointer text-center text-xs flex items-center justify-center gap-1"
                 >
                   <Heart size={14} /> Kirim Hadiah
                 </button>
               </div>
-
-              {/* REKENING REVEAL */}
-              {showGifts && (
-                <div className="mt-8 animate-fade-in-up">
-                  <div className="w-12 h-1 bg-primary/20 mx-auto mb-6 rounded-full" />
-                  <h3 className="font-display text-lg font-bold mb-4" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Kareem</h3>
-                  <p className="text-[11px] text-brown mb-6 px-2">
-                    Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
-                  </p>
-                  <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group">
-                    <div className="flex justify-center mb-4">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
-                    </div>
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
-                      <button
-                        onClick={() => copyToClipboard('1993120991')}
-                        className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
-                        title="Salin Rekening"
-                      >
-                        <Copy size={18} />
-                      </button>
-                    </div>
-                    <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </section>
@@ -622,6 +596,41 @@ const App: React.FC = () => {
           onClick={() => scrollTo('rsvp')}
         />
       </nav>
+
+      {/* MODAL GIFTS */}
+      {showGifts && (
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 bg-black/60 backdrop-blur-sm animate-fade-in-up">
+          <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-sm relative">
+            <button
+              onClick={() => setShowGifts(false)}
+              className="absolute top-4 right-4 text-primary bg-white hover:bg-primary hover:text-white border border-primary/20 p-2 rounded-full transition-colors active:scale-95 shadow-sm"
+              title="Tutup"
+            >
+              <X size={20} />
+            </button>
+            <h3 className="font-display text-2xl font-bold mb-4 text-center" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Kareem</h3>
+            <p className="text-[13px] text-brown mb-6 text-center leading-relaxed">
+              Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah cara Anda mengungkapkan kasih sayang, kami dengan senang hati menerimanya.
+            </p>
+            <div className="bg-secondary/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden group mb-4">
+              <div className="flex justify-center mb-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
+              </div>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
+                <button
+                  onClick={() => copyToClipboard('1993120991')}
+                  className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
+                  title="Salin Rekening"
+                >
+                  <Copy size={18} />
+                </button>
+              </div>
+              <p className="text-sm font-semibold text-brown text-center uppercase tracking-wider">a.n Ahmad Muzakkir</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* SUCCESS TOAST */}
       {
