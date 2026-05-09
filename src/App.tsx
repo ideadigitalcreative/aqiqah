@@ -644,9 +644,9 @@ const App: React.FC = () => {
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Bank_Syariah_Indonesia.svg" alt="BSI" className="h-10" />
               </div>
               <div className="flex items-center justify-between gap-2 mb-2">
-                <p className="text-xl font-mono font-bold text-brown tracking-wider">1993 1209 91</p>
+                <p className="text-xl font-mono font-bold text-brown tracking-wider">5679 443 860</p>
                 <button
-                  onClick={() => copyToClipboard('1993120991')}
+                  onClick={() => copyToClipboard('5679443860')}
                   className="p-2 bg-white rounded-full shadow-sm hover:scale-110 active:scale-95 transition-transform text-primary"
                   title="Salin Rekening"
                 >
