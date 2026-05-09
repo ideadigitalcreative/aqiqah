@@ -262,22 +262,22 @@ const App: React.FC = () => {
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft text-center">
               <div className="space-y-4 text-[13px] leading-relaxed text-brown font-medium">
                 <p>
-                  Dua tahun bukan waktu yang sebentar bagi kami. Banyak doa dipanjatkan diam-diam setelah shalat, banyak air mata yang jatuh, dan harapan yang tetap kami genggam meski hati kadang lelah menunggu.
+                  Dua tahun bukan waktu yang sebentar bagi kami. Banyak doa dipanjatkan diam-diam setelah shalat, air mata pun jatuh, namun harapan tetap kami genggam.
                 </p>
                 <p>
-                  Setiap kali melihat teman menggendong buah hati, kami ikut bahagia, tetapi hati kecil kami berbisik, “Ya Allah, kapan giliran kami?”
+                  Setiap kali melihat teman menggendong buah hati, hati kecil kami berbisik, “Ya Allah, kapan giliran kami?”
                 </p>
                 <p>
-                  Hari demi hari berlalu. Kami belajar lebih sabar, lebih ikhlas, dan percaya setiap doa didengar pada waktu terbaik-Nya. Hingga akhirnya, setelah penantian dua tahun, Allah menghadiahkan kepada kami anak pertama yang sangat kami cintai.
+                  Hari demi hari berlalu. Kami belajar sabar dan ikhlas, hingga akhirnya setelah penantian dua tahun Allah menghadiahkan anak pertama untuk kami.
                 </p>
                 <p>
-                  Saat tangis kecilnya pertama kali terdengar, rasanya dunia berhenti sejenak. Semua penantian dan doa akhirnya terjawab. Rumah yang dulu sunyi kini dipenuhi tawa dan kebahagiaan.
+                  Saat tangis kecilnya pertama kali terdengar, semua penantian dan doa terasa terjawab. Rumah yang dulu sunyi kini dipenuhi tawa dan kebahagiaan.
                 </p>
                 <p>
-                  Kini, dengan penuh rasa syukur, kami ingin melaksanakan tasyakuran aqiqah untuk buah hati kami tercinta sebagai bentuk terima kasih kepada Allah SWT atas amanah terindah ini.
+                  Kini, dengan penuh rasa syukur, kami ingin melaksanakan tasyakuran aqiqah sebagai bentuk terima kasih kepada Allah SWT atas amanah terindah ini.
                 </p>
                 <p>
-                  Semoga langkah kecil anak kami selalu dalam lindungan Allah, tumbuh sehat, shileh, berbakti kepada orang tua, dan membawa keberkahan. Dan semoga siapa pun yang sedang menunggu dalam doa panjang, suatu hari juga dipeluk oleh kebahagiaan yang sama.
+                  Semoga anak kami selalu dalam lindungan Allah, tumbuh sehat, shileh, berbakti kepada orang tua, dan membawa keberkahan. Semoga siapa pun yang sedang menunggu dalam doa panjang, suatu hari juga dipeluk kebahagiaan yang sama.
                 </p>
               </div>
             </div>
