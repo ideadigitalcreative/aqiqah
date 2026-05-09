@@ -7,6 +7,7 @@ import {
   Circle,
   Sun,
   Clock3,
+  MapPin,
   ArrowRight,
   User,
   Share2,
@@ -116,7 +117,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-03-11T17:00:00+08:00').getTime();
+    const targetDate = new Date('2026-05-11T11:00:00+08:00').getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -192,7 +193,7 @@ const App: React.FC = () => {
         <section
           id="cover"
           className="snap-section relative flex flex-col items-center justify-center text-center text-white bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           {/* Decorative Elements */}
           <div className="absolute inset-0 z-0">
@@ -216,22 +217,22 @@ const App: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-10 px-6 animate-slide-up">
-            <p className="text-sm uppercase tracking-[0.25em] mb-12 font-semibold -mt-24" style={{ color: '#6c52a1' }}>
+            <p className="text-sm uppercase tracking-[0.25em] mb-12 font-semibold -mt-24 text-primary">
               UNDANGAN TASYAKURAN AQIQAH
             </p>
             <div
               className="mb-8 px-12 py-20 bg-contain bg-center bg-no-repeat flex items-center justify-center min-h-[220px] w-full scale-125"
-              style={{ backgroundImage: 'url("/shape.webp")' }}
+              style={{ backgroundImage: 'url("/shape.png")' }}
             >
               <h1 className="font-display text-[24px] font-bold text-glow text-white leading-tight px-4 text-center">
-                Kareem Sehzade Muzakkir
+                Ahmad Musyaffa' Al Fajr
               </h1>
             </div>
-            <p className="mb-4 font-bold mt-12" style={{ color: '#6c52a1' }}>
-              Putra dari Ahmad Muzakkir & Ishmah Robbaniyyah
+            <p className="mb-4 font-bold mt-12 text-primary">
+              Putra dari Fajar Menyingsin & Syadza Lathifah
             </p>
-            <div className="inline-block px-8 py-2 bg-white/40 backdrop-blur-md rounded-full border border-white/30 mb-12 font-bold" style={{ color: '#6c52a1' }}>
-              Rabu, 11 Maret 2026
+            <div className="inline-block px-8 py-2 bg-white/40 backdrop-blur-md rounded-full border border-white/30 mb-12 font-bold text-primary">
+              Senin, 11 Mei 2026
             </div>
             <button
               onClick={() => scrollTo('doa')}
@@ -246,12 +247,12 @@ const App: React.FC = () => {
         <section
           id="doa"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           {/* Masjid Illustration Top */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[320px] pt-8 px-6 reveal">
             <img
-              src="/masjid.webp"
+              src="/masjid.png"
               alt="Masjid"
               className="w-full h-auto drop-shadow-lg"
             />
@@ -266,7 +267,7 @@ const App: React.FC = () => {
                 <p>
                   Dalam setiap doa, terutama ketika berada di Tanah Haram, kami selalu memohon:
                 </p>
-                <p className="italic font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
+                <p className="italic font-bold text-primary">
                   "Ya Allah, berikanlah pada waktu yang tepat dan dengan cara-Mu, ya Rabb. Jika Engkau ridha, maka mudahkanlah."
                 </p>
                 <p>
@@ -282,28 +283,31 @@ const App: React.FC = () => {
         <section
           id="profil"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-large text-center reveal w-full -mt-12">
             <div className="w-40 h-40 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center overflow-hidden shadow-inner border-4 border-white/50 relative">
               <img
                 src="/baby1.png"
-                alt="Kareem Sehzade Muzakkir"
+                alt="AHMAD MUSYAFFA' AL FAJR"
                 className="w-full h-full object-cover scale-150 origin-center"
               />
             </div>
             <p className="text-sm mb-4 leading-relaxed text-brown">
               Dengan penuh rasa syukur kepada Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara Tasyakuran Aqiqah putra kami tercinta:
             </p>
-            <h3 className="font-display text-2xl font-bold mb-2" style={{ color: 'rgb(108, 82, 161)' }}>
-              Kareem Sehzade Muzakkir
+            <h3 className="font-display text-2xl font-bold mb-2 text-primary">
+              AHMAD MUSYAFFA' AL FAJR
             </h3>
+            <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">
+              Lahir: Selasa, 05 Mei 2026
+            </p>
             <div className="w-12 h-0.5 bg-accent mx-auto mb-4" />
             <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">
               Putra dari
             </p>
             <p className="font-semibold text-brown">
-              Ahmad Muzakkir & Ishmah Robbaniyyah
+              Fajar Menyingsin & Syadza Lathifah
             </p>
           </div>
         </section>
@@ -312,10 +316,10 @@ const App: React.FC = () => {
         <section
           id="acara"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           <div className="w-full reveal -mt-12">
-            <h2 className="font-display text-2xl font-bold text-center mb-8 drop-shadow-md" style={{ color: 'rgb(108, 82, 161)' }}>
+            <h2 className="font-display text-2xl font-bold text-center mb-8 drop-shadow-md text-primary">
               Detail Acara
             </h2>
 
@@ -334,7 +338,7 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Tanggal</p>
-                  <p className="font-semibold text-brown">Rabu, 11 Maret 2026</p>
+                  <p className="font-semibold text-brown">Senin, 11 Mei 2026</p>
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-5 rounded-lg shadow-soft flex items-center gap-4">
@@ -343,8 +347,26 @@ const App: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Waktu</p>
-                  <p className="font-semibold text-brown">Pukul 17.00 WITA – Selesai</p>
-                  <p className="text-xs text-primary font-bold">(Buka Puasa Bersama)</p>
+                  <p className="font-semibold text-brown">Pukul 11.00 wita - Selesai</p>
+                </div>
+              </div>
+              <div className="bg-white/90 backdrop-blur-sm p-5 rounded-lg shadow-soft flex items-center gap-4">
+                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center shrink-0">
+                  <MapPin className="text-primary" size={24} strokeWidth={1.5} />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground">Lokasi</p>
+                  <p className="font-semibold text-brown">
+                    Jl. Pahlawan Kompleks Mitra Berdikari Asri Blok A1 No.1, RQ Kurdin Nurhayati Bulurokeng
+                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/wu7mU4tV8HqCDSWM6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block mt-1 text-xs font-bold text-primary underline underline-offset-2"
+                  >
+                    Buka Google Maps
+                  </a>
                 </div>
               </div>
             </div>
@@ -355,11 +377,11 @@ const App: React.FC = () => {
         <section
           id="lokasi"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-6"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           <div className="w-full reveal z-10">
-            <h2 className="font-display text-2xl font-bold text-center mb-6 drop-shadow-md -mt-12" style={{ color: 'rgb(108, 82, 161)' }}>
-              Kado untuk Zade
+            <h2 className="font-display text-2xl font-bold text-center mb-6 drop-shadow-md -mt-12 text-primary">
+              Kado untuk Ananda
             </h2>
 
             <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-soft text-center">
@@ -387,10 +409,10 @@ const App: React.FC = () => {
         <section
           id="rsvp"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start pt-12 p-6"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           <div className="w-full reveal pb-24 overflow-y-auto custom-scrollbar">
-            <h2 className="font-display text-2xl font-bold mb-2 drop-shadow-md" style={{ color: 'rgb(108, 82, 161)' }}>
+            <h2 className="font-display text-2xl font-bold mb-2 drop-shadow-md text-primary">
               Konfirmasi Kehadiran
             </h2>
             <p className="text-sm mb-6 font-medium text-black">
@@ -442,7 +464,7 @@ const App: React.FC = () => {
             </form>
 
             <div className="space-y-4">
-              <h3 className="font-display text-lg font-bold drop-shadow-md" style={{ color: 'rgb(108, 82, 161)' }}>Ucapan & Doa</h3>
+              <h3 className="font-display text-lg font-bold drop-shadow-md text-primary">Ucapan & Doa</h3>
               <div className="space-y-3 pr-1">
                 {wishes.map((w, i) => (
                   <div key={i} className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-soft flex gap-3 animate-fade-in-up">
@@ -464,34 +486,36 @@ const App: React.FC = () => {
         <section
           id="thanks"
           className="snap-section relative bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center p-8 text-center"
-          style={{ backgroundImage: 'url("/bg.webp")' }}
+          style={{ backgroundImage: 'url("/bg.png")' }}
         >
           <div className="reveal space-y-8 max-w-xs mx-auto">
             <div className="bg-white/90 backdrop-blur-sm p-10 rounded-lg shadow-large">
-              <h2 className="font-display text-3xl font-bold mb-6" style={{ color: 'rgb(108, 82, 161)' }}>
+              <h2 className="font-display text-3xl font-bold mb-6 text-primary">
                 Terima Kasih
               </h2>
-              <p className="text-sm leading-relaxed text-brown mb-8">
-                Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada putra kami.
+              <p className="text-sm leading-relaxed text-brown">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara(i) berkenan hadir dan memberikan doa kepada putra kami.
               </p>
-              <div className="space-y-2">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">Keluarga Besar</p>
-                <p className="font-display text-xl font-bold" style={{ color: 'rgb(108, 82, 161)' }}>
-                  Ahmad Muzakkir & Ishmah Robbaniyyah
+              <p className="text-sm leading-relaxed text-brown">
+                Atas kehadirannya, kami ucapkan terimakasih teriring doa setulus hati. Jazaakumullahu khairan.
+              </p>
+              <div className="space-y-2 mt-8">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">Kami Yang Berbahagia</p>
+                <p className="font-display text-xl font-bold text-primary">
+                  Fajar Menyingsin & Syadza Lathifah
                 </p>
               </div>
             </div>
 
             <button
               onClick={() => scrollTo('cover')}
-              className="inline-flex items-center gap-2 text-white font-semibold py-3 px-8 rounded-full shadow-large transition-transform active:scale-95"
-              style={{ backgroundColor: 'rgb(108, 82, 161)' }}
+              className="inline-flex items-center gap-2 text-white font-semibold py-3 px-8 rounded-full shadow-large transition-transform active:scale-95 bg-primary"
             >
               Kembali ke Atas
             </button>
 
-            <p className="text-[10px] pt-4 font-medium" style={{ color: 'rgb(108, 82, 161)' }}>
-              © 2026 Kareem Sehzade Muzakkir
+            <p className="text-[10px] pt-4 font-medium text-primary">
+              © 2026 Fajar Menyingsin & Syadza Lathifah
             </p>
           </div>
         </section>
@@ -500,11 +524,12 @@ const App: React.FC = () => {
       {/* SHARE BUTTON */}
       <button
         onClick={() => {
-          const text = encodeURIComponent("Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara Tasyakuran Aqiqah putra kami Kareem Sehzade Muzakkir. Info selengkapnya: https://muhammad-hanan-al-fitrah.vercel.app/");
+          const text = encodeURIComponent(
+            "Assalamu'alaikum, kami mengundang Bapak/Ibu/Saudara(i) untuk hadir di acara Tasyakuran Aqiqah putra kami.\n\nYang insyaaAllah dilaksanakan pada :\n🗓️Hari Senin, 11 Mei 2026\n⏰️ Pukul 11.00 wita - Selesai\n📍Jl. Pahlawan Kompleks Mitra Berdikari Asri Blok A1 No.1, RQ Kurdin Nurhayati Bulurokeng\nhttps://maps.app.goo.gl/wu7mU4tV8HqCDSWM6"
+          );
           window.open(`https://wa.me/?text=${text}`, '_blank');
         }}
-        style={{ color: 'rgb(108, 82, 161)' }}
-        className="fixed left-1/2 translate-x-[130px] bottom-34 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+        className="fixed left-1/2 translate-x-[130px] bottom-34 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95 text-primary"
       >
         <Share2 size={24} strokeWidth={2.5} />
       </button>
@@ -513,8 +538,7 @@ const App: React.FC = () => {
       <button
         id="btnAutoplay"
         onClick={toggleMusic}
-        style={{ color: 'rgb(108, 82, 161)' }}
-        className="fixed left-1/2 translate-x-[130px] bottom-20 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95"
+        className="fixed left-1/2 translate-x-[130px] bottom-20 z-50 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-large flex items-center justify-center transition-all duration-300 border-2 border-primary/20 active:scale-95 text-primary"
       >
         {isPlaying ? (
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256" className="pause animate-pulse-gentle">
@@ -594,7 +618,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <h3 className="font-display text-2xl font-bold mb-4 text-center" style={{ color: 'rgb(108, 82, 161)' }}>Kado untuk Zade</h3>
+            <h3 className="font-display text-2xl font-bold mb-4 text-center text-primary">Kado untuk Ananda</h3>
 
             {/* Map Section in Modal */}
             <div className="w-full h-48 rounded-xl overflow-hidden mb-6 border border-primary/10 shadow-inner">
@@ -604,7 +628,7 @@ const App: React.FC = () => {
                 height="100%"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src="https://maps.google.com/maps?q=-5.095288,119.52568&z=17&output=embed"
+                src="https://maps.google.com/maps?q=Jl.%20Pahlawan%20Kompleks%20Mitra%20Berdikari%20Asri%20Blok%20A1%20No.1,%20RQ%20Kurdin%20Nurhayati%20Bulurokeng&z=17&output=embed"
                 allowFullScreen
               ></iframe>
             </div>
@@ -624,7 +648,7 @@ const App: React.FC = () => {
                   <Copy size={18} />
                 </button>
               </div>
-              <p className="text-sm font-semibold text-brown uppercase tracking-wider text-left">a.n Ahmad Muzakkir</p>
+              <p className="text-sm font-semibold text-brown uppercase tracking-wider text-left">a.n Fajar Menyingsin</p>
             </div>
           </div>
         </div>
@@ -665,11 +689,11 @@ const CountdownBox: React.FC<{ value: number, label: string }> = ({ value, label
   return (
     <div className="flex flex-col items-center">
       <div className="w-16 h-16 bg-white/95 backdrop-blur-sm rounded-xl shadow-soft flex items-center justify-center mb-1 border border-primary/10">
-        <span className="text-2xl font-bold font-display" style={{ color: 'rgb(108, 82, 161)' }}>
+        <span className="text-2xl font-bold font-display text-primary">
           {value.toString().padStart(2, '0')}
         </span>
       </div>
-      <span className="text-[10px] uppercase tracking-wider font-bold drop-shadow-sm" style={{ color: 'rgb(108, 82, 161)' }}>
+      <span className="text-[10px] uppercase tracking-wider font-bold drop-shadow-sm text-primary">
         {label}
       </span>
     </div>
