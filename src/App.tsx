@@ -262,27 +262,22 @@ const App: React.FC = () => {
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-soft text-center">
               <div className="space-y-4 text-[13px] leading-relaxed text-brown font-medium">
                 <p>
-                  Dua tahun bukan waktu yang sebentar bagi kami.
-                  Ada banyak doa yang dipanjatkan diam-diam setelah shalat, banyak air mata yang jatuh tanpa diketahui siapa pun, dan banyak harapan yang terus kami genggam meski kadang hati mulai lelah menunggu.
+                  Dua tahun bukan waktu yang sebentar bagi kami. Banyak doa dipanjatkan diam-diam setelah shalat, banyak air mata yang jatuh, dan harapan yang tetap kami genggam meski hati kadang lelah menunggu.
                 </p>
                 <p>
-                  Setiap kali melihat teman menggendong buah hati mereka, kami ikut bahagia, tetapi di dalam hati kecil kami selalu berbisik,
-                  “Ya Allah, kapan giliran kami?”
+                  Setiap kali melihat teman menggendong buah hati, kami ikut bahagia, tetapi hati kecil kami berbisik, “Ya Allah, kapan giliran kami?”
                 </p>
                 <p>
-                  Hari demi hari berlalu. Kami belajar untuk lebih sabar, lebih ikhlas, dan lebih percaya bahwa setiap doa pasti didengar pada waktu terbaik-Nya. Hingga akhirnya, setelah penantian panjang selama dua tahun, Allah menghadiahkan kepada kami seorang anak pertama yang begitu kami cintai sejak sebelum ia lahir.
+                  Hari demi hari berlalu. Kami belajar lebih sabar, lebih ikhlas, dan percaya setiap doa didengar pada waktu terbaik-Nya. Hingga akhirnya, setelah penantian dua tahun, Allah menghadiahkan kepada kami anak pertama yang sangat kami cintai.
                 </p>
                 <p>
-                  Tangis kecilnya pertama kali terdengar, rasanya seperti seluruh dunia berhenti sejenak. Semua penantian, perjuangan, dan doa yang selama ini kami simpan akhirnya terjawab sudah. Rumah yang dulu terasa sunyi kini dipenuhi suara tangisan, tawa, dan kebahagiaan yang tak bisa digambarkan dengan kata-kata.
+                  Saat tangis kecilnya pertama kali terdengar, rasanya dunia berhenti sejenak. Semua penantian dan doa akhirnya terjawab. Rumah yang dulu sunyi kini dipenuhi tawa dan kebahagiaan.
                 </p>
                 <p>
-                  Kini, dengan penuh rasa syukur, kami ingin melaksanakan tasyakuran aqiqah untuk buah hati kami tercinta. Bukan sekadar sebuah acara, tetapi sebagai bentuk terima kasih kami kepada Allah SWT atas amanah terindah yang telah diberikan kepada keluarga kecil kami.
+                  Kini, dengan penuh rasa syukur, kami ingin melaksanakan tasyakuran aqiqah untuk buah hati kami tercinta sebagai bentuk terima kasih kepada Allah SWT atas amanah terindah ini.
                 </p>
                 <p>
-                  Semoga langkah kecil anak kami selalu dalam lindungan Allah, tumbuh menjadi anak yang sehat, shileh, berbakti kepada orang tua, dan membawa keberkahan bagi banyak orang.
-                </p>
-                <p>
-                  Dan semoga setiap orang yang pernah menunggu dalam doa panjang seperti kami, suatu hari nanti juga dipeluk oleh kebahagiaan yang sama.
+                  Semoga langkah kecil anak kami selalu dalam lindungan Allah, tumbuh sehat, shileh, berbakti kepada orang tua, dan membawa keberkahan. Dan semoga siapa pun yang sedang menunggu dalam doa panjang, suatu hari juga dipeluk oleh kebahagiaan yang sama.
                 </p>
               </div>
             </div>
